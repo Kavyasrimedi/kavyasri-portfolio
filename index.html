@@ -3,60 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Kavya Sri Medi | Machine Learning Engineer</title>
-
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #FAF8F3;
-            color: #2D2D2D;
-            font-family: Arial, sans-serif;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            margin: 0 0 12px;
-            font-size: 3rem;
-            font-weight: 600;
-        }
-
-        h2 {
-            margin: 0 0 24px;
-            color: #2F6B4F;
-            font-size: 1.4rem;
-            font-weight: 500;
-        }
-
-        p {
-            max-width: 550px;
-            margin: auto;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-    </style>
+    <meta name="description" content="Portfolio of Kavya Sri Medi, a curious builder exploring technology and turning ideas into useful solutions.">
+    
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icons/icon.png" type="image/x-icon">
 </head>
-
 <body>
 
-    <main class="hero">
-        <h1>Kavya Sri Medi</h1>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo"><img src="assets/icons/icon.png" alt="Kavya Sri Medi"></a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#work">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <h2>Machine Learning Engineer</h2>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="greeting">Hi, I'm Kavya Sri Medi</p>
+                <h1 class="hero-title">A curious builder</h1>
+                <p class="hero-statement">Exploring technology and turning ideas into useful solutions.</p>
+                <div class="hero-cta">
+                    <a href="#work" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <p>
-            Building practical machine learning solutions
-            that help turn data into better decisions.
-        </p>
-    </main>
+    <!-- Selected Work / Projects -->
+    <section id="work" class="section">
+        <div class="container">
+            <h2 class="section-title">Selected Work</h2>
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <!-- Replace with actual screenshot -->
+                    <img src="assets/images/voltpredict-screenshot.jpeg" alt="VoltPredict Interface Screenshot">
+                </div>
+                <div class="project-details">
+                    <h3>VoltPredict</h3>
+                    <p class="project-role">Electricity Price Prediction</p>
+                    <p class="project-desc">Built an electricity price forecasting system using Random Forest Regression and historical energy market data. Engineered weather and load features and deployed the model via a Django-based web app for real-time predictions.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Django</span>
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="link" target="_blank">Case Study</a> -->
+                        <a href="https://github.com/Kavyasrimedi/electricity-price-prediction" class="link" target="_blank">GitHub</a>
+                        <a href="https://voltpredict-demo.herokuapp.com/" class="link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Project 2 -->
+            <div class="project-card reverse">
+                <div class="project-image">
+                    <!-- Replace with actual screenshot -->
+                    <img src="assets/images/linguaflow-screenshot.png" alt="LinguaFlow Interface Screenshot">
+                </div>
+                <div class="project-details">
+                    <h3>LinguaFlow</h3>
+                    <p class="project-role">Multilingual Translator</p>
+                    <p class="project-desc">Developed a full-stack multilingual translation platform. Built REST APIs for language detection, translation, and history management, enhancing the experience with voice input/output.</p>
+                    <div class="tech-stack">
+                        <span>Flask</span><span>SQLite</span><span>JavaScript</span><span>Python</span>
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="link" target="_blank">Case Study</a> -->
+                        <a href="https://github.com/Kavyasrimedi/LinguaFlow" class="link" target="_blank">GitHub</a>
+                        <a href="https://linguaflow-1.onrender.com/" class="link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Machine Learning Engineering Intern</h3>
+                    <span class="exp-company">FlyRank.ai</span>
+                    <span class="exp-date">Ongoing</span>
+                </div>
+                <ul class="exp-list">
+                    <li>Framed real-world ML problems by defining research objectives, ML task types, and data contracts for search intelligence workflows.</li>
+                    <li>Worked with large-scale search analytics datasets, focusing on feature engineering, data validation, and data leakage prevention.</li>
+                    <li>Applied prompt engineering and AI-assisted workflows to improve technical analysis, documentation, and ML project communication.</li>
+                    <li>Currently exploring agentic AI architectures, MCP concepts, and building ML models to compare honestly against baselines.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Open Summer of Code (OSOC) Contributor</h3>
+                    <span class="exp-company">Open Community</span>
+                    <span class="exp-date">Jun 2025 - Jul 2025</span>
+                    <img src="assets/images/osoc-cert.png" alt="Postman Student Expert" class="credential-img">
+
+                </div>
+                <ul class="exp-list">
+                    <li>Built backend notification modules following SDLC practices.</li>
+                    <li>Integrated MongoDB with Node.js using OOP-based handlers.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>AIML Training Intern</h3>
+                    <span class="exp-company">Edunet Foundation | Microsoft | AICTE </span>
+                    <span class="exp-date">Apr 2024 - Jun 2024</span>
+                </div>
+                <ul class="exp-list">
+                    <li> Completed AI/ML training by Microsoft and AICTE covering the ML lifecycle.</li>
+                    <li>Built and evaluated ML models using Python, Scikit-learn, and Pandas with OOP design.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Skills -->
+    <section id="about" class="section">
+        <div class="container grid-2">
+            <div>
+                <h2 class="section-title">About Me</h2>
+                <p>I am a Computer Science undergraduate (B.Tech CSE AI & ML, 2027) with a strong foundation in data structures, backend engineering, and machine learning. I enjoy bridging the gap between raw data and practical applications.</p>
+                <p>Beyond training models, I care about the entire lifecycle of a project—from problem decomposition and writing robust APIs to designing clean, accessible user interfaces.</p>
+                <a href="assets/cv/kavyasri_resume.pdf" class="btn btn-secondary mt-2" target="_blank">Download Resume</a>
+            </div>
+            
+            <div>
+                <h2 class="section-title">Capabilities & Exploration</h2>
+                <div class="skills-group">
+                    <strong>AI & Machine Learning</strong>
+                    <p>Scikit-learn, Pandas, NLTK, Prompt Engineering, Agentic AI, Model Evaluation</p>
+                </div>
+                <div class="skills-group">
+                    <strong>Engineering & Data</strong>
+                    <p>Python, SQL, JavaScript, Flask, REST APIs, Data Validation</p>
+                </div>
+                <div class="skills-group">
+                    <strong>Current Learning & Focus</strong>
+                    <p>Building AI-assisted workflows, preparing for the GATE Data Science and Artificial Intelligence examination, and exploring tool/connector-based AI systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Achievements -->
+<!-- Certifications & Achievements -->
+    <section id="certifications" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            
+            <div class="credentials-grid">
+                <!-- Credential 1 -->
+                <div class="credential-card">
+                    <div class="credential-img-wrapper">
+                        <img src="assets/images/azure-ai-badge.png" alt="Azure AI Fundamentals" class="credential-img">
+                    </div>
+                    <div class="credential-info">
+                        <h3>Microsoft Certified: Azure AI Fundamentals (AI-900)</h3>
+                        <a href="#" target="_blank" class="link">View Credential</a>
+                    </div>
+                </div>
+
+                <!-- Credential 2 -->
+                <div class="credential-card">
+                    <div class="credential-img-wrapper">
+                        <img src="assets/images/naukri-achievement.jpeg" alt="Naukri Campus Young Turks" class="credential-img">
+                    </div>
+                    <div class="credential-info">
+                        <h3>AIR 4,337 — Naukri Campus Young Turks</h3>
+                        <p>Achieved rank among 30,000 participants; scored 94% in Round 1.</p>
+                    </div>
+                </div>
+
+                <!-- Credential 3 -->
+                <div class="credential-card">
+                    <div class="credential-img-wrapper">
+                        <img src="assets/images/nptel-cert.png" alt="NPTEL Certification" class="credential-img">
+                    </div>
+                    <div class="credential-info">
+                        <h3>NPTEL Certification</h3>
+                        <p>Programming, Data Structures and Algorithms using Python (IIT Madras)</p>
+                        <a href="#" target="_blank" class="link">View Credential</a>
+                    </div>
+                </div>
+
+                <!-- Credential 4 -->
+                <div class="credential-card">
+                    <div class="credential-img-wrapper">
+                        <img src="assets/images/postman-expert.png" alt="Postman Student Expert" class="credential-img">
+                    </div>
+                    <div class="credential-info">
+                        <h3>Postman API Fundamentals Student Expert</h3>
+                        <p>Experience in API testing and REST workflows.</p>
+                        <a href="#" target="_blank" class="link">View Credential</a>
+                    </div>
+                </div>
+
+                <!-- Credential 5 -->
+                <div class="credential-card">
+                    <div class="credential-img-wrapper">
+                        <img src="assets/images/ai-ml-internship.jpeg" alt="AI-ML Internship" class="credential-img">
+                    </div>
+                    <div class="credential-info">
+                        <h3>AI-ML Internship Certificate</h3>
+                        <p>Microsoft & AICTE</p>
+                        <a href="#" target="_blank" class="link">View Credential</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="section bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-text">I'm currently exploring new opportunities and collaborations. If you'd like to discuss a project, an interview opportunity, or just talk tech, feel free to reach out.</p>
+            <div class="contact-links">
+                <a href="mailto:kavyasrimedi9@gmail.com" class="btn btn-primary">Email Me</a>
+                <a href="www.linkedin.com/in/kavyasrimedi" class="btn btn-secondary" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Kavyasrimedi" class="btn btn-secondary" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kavya Sri Medi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
