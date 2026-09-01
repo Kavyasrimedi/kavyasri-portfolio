@@ -1,0 +1,487 @@
+/* ==========================================================================
+   CSS Variables (Based on Identity Kit)
+   ========================================================================== */
+   :root {
+    /* Colors */
+    --primary: #583482;       /* Deep Plum */
+    --accent: #BBA1D9;        /* Lavender */
+    --background: #FAF8FD;    /* Lavender Mist */
+    --text: #1F1F1F;          /* Charcoal */
+    --white: #FFFFFF;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing & Layout */
+    --container-width: 1100px;
+    --spacing-md: 2rem;
+    --spacing-lg: 5rem;
+    --radius: 8px;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background-color: var(--background);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+.bg-light {
+    background-color: rgba(187, 161, 217, 0.1); /* Very subtle accent background */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 { margin-top: 2rem; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #452866;
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.navbar {
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(250, 248, 253, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100px;
+    height: 100px;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-statement {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   Projects (Work)
+   ========================================================================== */
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.project-card.reverse {
+    direction: rtl;
+}
+
+.project-card.reverse > * {
+    direction: ltr;
+}
+
+.project-image img {
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(88, 52, 130, 0.1);
+}
+
+.project-role {
+    font-family: var(--font-body);
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-desc {
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.link {
+    font-weight: 600;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+}
+
+.link:hover {
+    border-bottom-color: var(--primary);
+}
+
+/* ==========================================================================
+   Experience
+   ========================================================================== */
+.experience-item {
+    margin-bottom: 3rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.exp-header {
+    margin-bottom: 1rem;
+}
+
+.exp-header h3 {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.exp-company {
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.exp-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.exp-list {
+    list-style-type: disc;
+    margin-left: 1rem;
+}
+
+.exp-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Grid & Layout Utils
+   ========================================================================== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.skills-group {
+    margin-bottom: 1.5rem;
+}
+
+.skills-group strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(187, 161, 217, 0.3);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Add JS to toggle this class */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 1rem 2rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .project-card, .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-card.reverse {
+        direction: ltr;
+    }
+}
+/* ==========================================================================
+   Certifications & Achievements
+   ========================================================================== */
+/* ==========================================================================
+   Certifications & Achievements (Redesigned)
+   ========================================================================== */
+.credentials-grid {
+    display: grid;
+    /* Forces columns to be at least 320px, automatically wrapping without media queries */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem; /* Generous whitespace between cards */
+}
+
+.credential-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(88, 52, 130, 0.04);
+    border: 1px solid rgba(187, 161, 217, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.credential-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(88, 52, 130, 0.1);
+    border-color: var(--accent);
+}
+
+.credential-img-wrapper {
+    width: 100%;
+    height: 280px; /* Forces all images into a uniform, large display area */
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-bottom: 1px solid rgba(187, 161, 217, 0.2);
+}
+
+.credential-img {
+    width: 100%;
+    height: 100%;
+    /* contain ensures neither badges nor horizontal certificates get stretched or cut off */
+    object-fit: contain; 
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.05));
+    transition: transform 0.4s ease;
+}
+
+.credential-card:hover .credential-img {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.credential-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures buttons align at the bottom if text lengths vary */
+}
+
+.credential-info h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    color: var(--primary);
+}
+
+.credential-info p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.credential-info .link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-top: auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
