@@ -27,3 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// Netlify Form AJAX Submission
+    const contactForm = document.getElementById('portfolio-contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default page redirect
+            
+            const formData = new FormData(contactForm);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                formStatus.textContent = "Thank you! Your message has been sent.";
+                formStatus.className = "form-status success";
+                contactForm.reset();
+            })
+            .catch((error) => {
+                formStatus.textContent = "Oops! There was a problem submitting your form.";
+                formStatus.className = "form-status error";
+            });
+        });
+    }

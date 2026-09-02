@@ -93,6 +93,26 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Project 3: PrepPilot -->
+            <div class="project-card">
+                <div class="project-image">
+                    <!-- Replace with actual screenshot -->
+                    <img src="assets/images/preppilot-screenshot.jpg" alt="PrepPilot Interface Screenshot">
+                </div>
+                <div class="project-details">
+                    <h3>PrepPilot</h3>
+                    <p class="project-role">AI Interview Preparation Agent (Ongoing)</p>
+                    <p class="project-desc">An AI-powered interview preparation assistant built with Dify. It analyzes a candidate's resume and job description, researches the target interview, creates a focused preparation plan, conducts mock interviews, and provides feedback on performance and communication.</p>
+                    <div class="tech-stack">
+                        <span>Dify</span><span>Prompt Engineering</span><span>Agentic AI</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link" target="_blank">GitHub</a>
+                        <a href="#" class="link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -239,17 +259,38 @@
     </section>
     <!-- Contact -->
     <section id="contact" class="section bg-light">
-        <div class="container text-center">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="contact-text">I'm currently exploring new opportunities and collaborations. If you'd like to discuss a project, an interview opportunity, or just talk tech, feel free to reach out.</p>
-            <div class="contact-links">
-                <a href="mailto:kavyasrimedi9@gmail.com" class="btn btn-primary">Email Me</a>
-                <a href="www.linkedin.com/in/kavyasrimedi" class="btn btn-secondary" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Kavyasrimedi" class="btn btn-secondary" target="_blank">GitHub</a>
+        <div class="container grid-2">
+            <div>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="contact-text">I'm currently exploring new opportunities and collaborations. If you'd like to discuss a project, an interview opportunity, or just talk tech, feel free to reach out.</p>
+                <div class="contact-links mt-2">
+                    <a href="mailto:kavyasrimedi9@gmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">LinkedIn</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">GitHub</a>
+                </div>
+            </div>
+            
+            <div>
+                <!-- Netlify Form -->
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" id="portfolio-contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    <p class="form-status" id="form-status"></p>
+                </form>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
