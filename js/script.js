@@ -27,29 +27,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-// Netlify Form AJAX Submission
+// Formspree AJAX Submission
     const contactForm = document.getElementById('portfolio-contact-form');
     const formStatus = document.getElementById('form-status');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent default page redirect
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            formStatus.textContent = "Sending...";
+            formStatus.className = "form-status";
             
             const formData = new FormData(contactForm);
-            
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                formStatus.textContent = "Thank you! Your message has been sent.";
-                formStatus.className = "form-status success";
-                contactForm.reset();
-            })
-            .catch((error) => {
-                formStatus.textContent = "Oops! There was a problem submitting your form.";
+
+            try {
+                // REQUIRED: Replace YOUR_FORM_ID with your actual Formspree string
+                const response = await fetch('https://formspree.io/f/meaqpwpo', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formStatus.textContent = "Thank you! Your message has been sent.";
+                    formStatus.className = "form-status success";
+                    contactForm.reset();
+                } else {
+                    formStatus.textContent = "Oops! There was a problem submitting your form.";
+                    formStatus.className = "form-status error";
+                }
+            } catch (error) {
+                formStatus.textContent = "Oops! There was a network error.";
                 formStatus.className = "form-status error";
-            });
+            }
         });
     }
